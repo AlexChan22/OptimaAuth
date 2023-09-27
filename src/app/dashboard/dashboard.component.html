@@ -1,0 +1,49 @@
+<mat-toolbar> Optima  
+
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+
+    </button>
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" mode="over" opened class="mat-elevation-z8">
+    <button mat-button class="menu-button">
+      <mat-icon style="color: white;">home</mat-icon>
+      <span style="color: white;">Home</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon style="color: white;">person</mat-icon>
+      <span style="color: white;">Profile</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon style="color: white;">info</mat-icon>
+      <span style="color: white;">Contact</span>
+    </button>
+  
+    <mat-divider></mat-divider>
+  
+    <button (click)="Return()" mat-button class="menu-button">
+      <mat-icon style="color: white;">logout</mat-icon>
+      <span style="color: white;">Log Out</span>
+    </button>
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8 d-flex flex-column">
+        <p>Este es el Dashboard</p>
+        <button (click)="Return()" class="mt-3 btn btn-primary btn-lg">
+            Log Out
+          </button>
+    </div>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
